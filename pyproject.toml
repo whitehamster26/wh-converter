@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A simply CLI converter"
 authors = ["whitehamster26"]
 packages = [
-  { include = "wh-conv" },
+  { include = "wh_conv" },
 ]
 
 [tool.poetry.dependencies]
@@ -20,7 +20,7 @@ name = "testpypi"
 url = "https://test.pypi.org/legacy/"
 
 [tool.poetry.scripts]
-wh-conv = "wh-conv.scripts.wh-conv:main"
+wh-conv = "wh_conv.scripts.wh_conv:main"
 
 [build-system]
 requires = ["poetry>=0.12"]

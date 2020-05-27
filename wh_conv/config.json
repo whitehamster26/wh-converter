@@ -1,0 +1,17 @@
+{
+    "api_key": "YX6R15ZFYOR4L7OJ",
+    "from_currency": "USD",
+    "to_currency": "RUB",
+    "last_call": {
+        "USD-RUB": "2020-05-27 17",
+        "RUB-USD": "2020-05-25 13"
+    },
+    "rates": {
+        "USD-RUB": "71.26063000",
+        "RUB-USD": "22"
+    },
+    "last_refresh": {
+        "USD-RUB": "2020-05-27 14:11:38",
+        "RUB-USD": "2020-05-25 13:00:00"
+    }
+}

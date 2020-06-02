@@ -1,17 +1,20 @@
 {
-    "api_key": "YX6R15ZFYOR4L7OJ",
-    "from_currency": "USD",
-    "to_currency": "RUB",
+    "api_key": "5V5OEOEN5K98E697",
+    "from_currency": "RUB",
+    "to_currency": "EUR",
     "last_call": {
-        "USD-RUB": "2020-05-27 17",
-        "RUB-USD": "2020-05-25 13"
+        "RUB-USD": "2020-06-02 20",
+        "USD-RUB": "2020-06-02 20",
+        "RUB-EUR": "2020-06-02 20"
     },
     "rates": {
-        "USD-RUB": "71.26063000",
-        "RUB-USD": "22"
+        "RUB-USD": "0.01449500",
+        "USD-RUB": "68.74493000",
+        "RUB-EUR": "0.01296400"
     },
     "last_refresh": {
-        "USD-RUB": "2020-05-27 14:11:38",
-        "RUB-USD": "2020-05-25 13:00:00"
+        "RUB-USD": "2020-06-02 17:18:03",
+        "USD-RUB": "2020-06-02 17:19:05",
+        "RUB-EUR": "2020-06-02 17:19:50"
     }
 }

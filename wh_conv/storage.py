@@ -7,16 +7,10 @@ def build_conf():
         'from_currency': 'USD',
         'to_currency': 'RUB',
         'last_call': {
-            'USD-RUB': '2020-05-25 13',
-            'RUB-USD': '2020-05-25 13'
         },
         'rates': {
-            'USD-RUB': '55',
-            'RUB-USD': '22'
         },
         'last_refresh': {
-            'USD-RUB': '2020-05-25 13:00:00',
-            'RUB-USD': '2020-05-25 13:00:00'
         }
     }
     save_conf(options)
@@ -41,3 +35,19 @@ def get_rates(data, pair):
 
 def get_pair(data):
     return f"{data['from_currency']}-{data['to_currency']}"
+
+
+def check_pair(data, pair):
+    return pair in data['rates']
+
+
+def pair_valid_save(data, pair):
+    if (len(pair) != 7) or pair[3] != '-':
+        raise Exception('Unexpected format. Please use XXX-YYY format')
+    from_curr, to_curr = pair.split('-')
+    data['from_currency'] = from_curr.upper()
+    data['to_currency'] = to_curr.upper()
+    save_conf(data)
+    print(
+          f'Pair successfully changed to {from_curr.upper()}-{to_curr.upper()}'
+        )

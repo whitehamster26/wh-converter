@@ -4,6 +4,7 @@
 <p>Alphavantage has some limit of using its API so you <a href="https://www.alphavantage.co/support/#api-key">can register</a> your free API key and use it in this app using <code>wh-conv --apikey [KEY]</code></p>
 
 <h2>Badges</h2>
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/670f08f9299cfab86748/maintainability)](https://codeclimate.com/github/whitehamster26/wh-converter/maintainability)
 [![Build Status](https://travis-ci.org/whitehamster26/wh-converter.svg?branch=master)](https://travis-ci.org/whitehamster26/wh-converter)
 
@@ -25,16 +26,15 @@ doesn't able to parse server answer it throws this exception.</p>
 
 <p>You can convert one currency to another just adding a number as an argument</p>
 <code>wh-conv [NUMBER]</code><br>
-<code>user@:~$ wh-conv<br>
-USD-RUB: 68.68. Last update: 2020-06-06 13:48:52<br>
-user@:~$ wh-conv 1000<br>
-Converting USD-RUB: 1000 -> 68681.0</code>
+<code>user@:~$ wh-conv</code><br>
+<code>USD-RUB: 68.68. Last update: 2020-06-06 13:48:52</code><br>
+<code>user@:~$ wh-conv 1000</code><br>
+<code>Converting USD-RUB: 1000 -> 68681.0</code>
 
 <p>As a feature, you can change the pair and convert it immediately</p>
-<code>user@:~$ wh-conv -p USD-CNY 1500<br>
-Pair successfully changed to USD-CNY<br>
-Converting USD-CNY: 1500 -> 10621.2<br>
-</code>
+<code>user@:~$ wh-conv -p USD-CNY 1500</code><br>
+<code>Pair successfully changed to USD-CNY</code><br>
+<code>Converting USD-CNY: 1500 -> 10621.2</code><br>
 
 <h3>Storage</h3>
 

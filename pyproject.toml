@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "wh-conv"
-version = "0.1.5"
-description = "A simply CLI converter"
+version = "0.1.9"
+description = "A simple CLI currency converter"
 authors = ["whitehamster26"]
 packages = [
   { include = "wh_conv" },

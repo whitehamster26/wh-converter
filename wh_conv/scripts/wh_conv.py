@@ -1,5 +1,6 @@
 from wh_conv.app_source import show_currency, convert_currency
 from wh_conv.storage import build_conf, pair_valid_save, save_conf
+from wh_conv.storage import PATH as CONFIG_PATH
 import os
 import json
 import argparse
@@ -29,10 +30,10 @@ def catch_exceptions(func):
 @catch_exceptions
 def main():
     args = parser.parse_args()
-    if not os.path.isfile('wh_conv/config.json'):
+    if not os.path.isfile(CONFIG_PATH):
         build_conf()
         print(FIRST_RUN_WARNING)
-    with open('wh_conv/config.json', 'r') as f:
+    with open(CONFIG_PATH, 'r') as f:
         data = json.load(f)
     if args.apikey:
         data['api_key'] = args.apikey

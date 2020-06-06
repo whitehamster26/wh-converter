@@ -1,4 +1,7 @@
 import json
+import os
+
+PATH = os.path.join('.', '.wh-conv.json')
 
 
 def build_conf():
@@ -17,7 +20,7 @@ def build_conf():
 
 
 def save_conf(data):
-    with open('wh_conv/config.json', 'w') as f:
+    with open(PATH, 'w') as f:
         json.dump(data, f, indent=4)
 
 

@@ -19,7 +19,7 @@
 <p>Just follow this command <code>wh-conv -p XXX-YYY</code> to set another pair</p>
 <p>After that you can see actual rate of this pair just using <code>wh-conv</code></p>
 <p><strong>Sometimes you can see "API error" exception.</strong></p>
-<p>Unfortunately alphavantage (which API I use) doesn't support some currencies. If programm
+<p>Unfortunately alphavantage (which API I use) doesn't support some currencies. If application
 doesn't able to parse server answer it throws this exception.</p>
 
 <h3>Convert currency</h3>
@@ -29,9 +29,10 @@ doesn't able to parse server answer it throws this exception.</p>
 <code>user@:~$ wh-conv</code><br>
 <code>USD-RUB: 68.68. Last update: 2020-06-06 13:48:52</code><br>
 <code>user@:~$ wh-conv 1000</code><br>
-<code>Converting USD-RUB: 1000 -> 68681.0</code>
+<code>Converting USD-RUB: 1000 -> 68681.0</code><br>
 
 <p>As a feature, you can change the pair and convert it immediately</p>
+
 <code>user@:~$ wh-conv -p USD-CNY 1500</code><br>
 <code>Pair successfully changed to USD-CNY</code><br>
 <code>Converting USD-CNY: 1500 -> 10621.2</code><br>

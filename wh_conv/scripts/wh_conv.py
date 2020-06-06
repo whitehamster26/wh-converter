@@ -42,6 +42,8 @@ def main():
         pair_valid_save(data, args.pair)
         if args.quantity:
             print(convert_currency(data, args.quantity))
+        else:
+            print(show_currency(data))
     elif args.quantity:
         print(convert_currency(data, args.quantity))
     else:

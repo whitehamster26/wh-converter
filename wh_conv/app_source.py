@@ -16,22 +16,32 @@ def get_currency(config_data):
                                             config_data['to_currency'],
                                             config_data['api_key']
                                             )
-        result = api_requests.parse_request(request)
-        config_data['rates'][pair] = result[0]
-        config_data['last_refresh'][pair] = result[1]
+        rates, last_refresh = api_requests.parse_request(request)
+        config_data['rates'][pair] = rates
+        config_data['last_refresh'][pair] = last_refresh
         config_data['last_call'][pair] = call_time
         storage.save_conf(config_data)
-        return result
+        return rates, last_refresh
+
+
+def represent_currency(string):
+    integer, modulo = string.split('.')
+    return f'{integer}.{modulo[0:2]}'
 
 
 def show_currency(config_data):
-    currency = get_currency(config_data)
-    return f"{storage.get_pair(config_data)}: {currency[0][0:5]}. \
-Last update: {currency[1]}"
+    pair = storage.get_pair(config_data)
+    currency, last_update = get_currency(config_data)
+    represented_curr = represent_currency(currency)
+    return f"{pair}: {represented_curr}. Last update: {last_update}"
 
 
 def convert_currency(config_data, quantity):
+    if not quantity.replace('.', '', 1).isdigit():
+        raise Exception('Integer or float number expected')
+    pair = storage.get_pair(config_data)
     currency, _ = get_currency(config_data)
     currency = float(currency)
-    return f"Converting {storage.get_pair(config_data)}:\
- {quantity} -> {str(currency * float(quantity))[0:5]}"
+    converted_curr = currency * float(quantity)
+    represented_curr = represent_currency(str(converted_curr))
+    return f"Converting {pair}: {quantity} -> {represented_curr}"

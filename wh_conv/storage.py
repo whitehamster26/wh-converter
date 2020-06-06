@@ -5,7 +5,7 @@ def build_conf():
     options = {
         'api_key': 'YX6R15ZFYOR4L7OJ',
         'from_currency': 'USD',
-        'to_currency': 'RUB',
+        'to_currency': 'EUR',
         'last_call': {
         },
         'rates': {

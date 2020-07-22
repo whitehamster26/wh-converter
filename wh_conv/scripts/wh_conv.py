@@ -14,6 +14,8 @@ If you want to add your API key use wh-conv with argument --apikey [KEY]
 parser = argparse.ArgumentParser(description='Currency checker and converter')
 parser.add_argument('-p', '--pair', type=str, help='set currency pair in \
     format XXX-YYY')
+parser.add_argument('-n', '--num', type=str, help='set output format to \
+    numeric')
 parser.add_argument('--apikey', type=str, help='set your API key')
 parser.add_argument('quantity', nargs='?', default=None)
 
@@ -39,6 +41,14 @@ def main():
         data['api_key'] = args.apikey
         save_conf(data)
         print(f'API key successfully set to {data["api_key"]}')
+    elif args.num:
+        if args.num not in ('0', '1'):
+            raise Exception('Please use 0 or 1 to enable or \
+unable numeric output')
+        else:
+            data['numeric_output'] = int(args.num)
+            save_conf(data)
+            print('Output format succesfully changed!')
     elif args.pair:
         pair_valid_save(data, args.pair)
         if args.quantity:

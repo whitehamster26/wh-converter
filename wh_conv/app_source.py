@@ -33,7 +33,10 @@ def show_currency(config_data):
     pair = storage.get_pair(config_data)
     currency, last_update = get_currency(config_data)
     represented_curr = represent_currency(currency)
-    return f"{pair}: {represented_curr}. Last update: {last_update}"
+    if not config_data['numeric_output']:
+        return f"{pair}: {represented_curr}. Last update: {last_update}"
+    else:
+        return currency
 
 
 def convert_currency(config_data, quantity):

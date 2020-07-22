@@ -7,6 +7,7 @@ PATH = os.path.join('.', '.wh-conv.json')
 def build_conf():
     options = {
         'api_key': 'YX6R15ZFYOR4L7OJ',
+        'numeric_output': 0,
         'from_currency': 'USD',
         'to_currency': 'EUR',
         'last_call': {

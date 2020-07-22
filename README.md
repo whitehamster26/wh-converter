@@ -15,9 +15,15 @@
 <h2>Usage</h2>
 
 <h3>Check actual rate</h3>
+
 <p>First you should pick a currency pair in format XXX-YYY. By default currency pair set USD-EUR</p>
 <p>Just follow this command <code>wh-conv -p XXX-YYY</code> to set another pair</p>
 <p>After that you can see actual rate of this pair just using <code>wh-conv</code></p>
+<p>Also you can change output format to numeric for using it in unix pipelines</p>
+<code>user@:~$ wh-conv -n 1</code><br>
+<code>Output format succesfully changed!</code><br>
+<code>wh-conv</code><br>
+<code>0.86350000</code><br>
 <p><strong>Sometimes you can see "API error" exception.</strong></p>
 <p>Unfortunately alphavantage (which API I use) doesn't support some currencies. If application
 doesn't able to parse server answer it throws this exception.</p>
